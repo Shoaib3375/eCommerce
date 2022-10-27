@@ -92,12 +92,12 @@
                                 <form>
                                     <div class="sign-up">
                                         <h4>Email :</h4>
-                                        <input type="text" value="Type here" onfocus="this.value = '';"
+                                        <input type="text" name="email" value="Type here" onfocus="this.value = '';"
                                             onblur="if (this.value == '') {this.value = 'Type here';}" required="">
                                     </div>
                                     <div class="sign-up">
                                         <h4>Password :</h4>
-                                        <input type="password" value="Password" onfocus="this.value = '';"
+                                        <input type="password" name="password" value="Password" onfocus="this.value = '';"
                                             onblur="if (this.value == '') {this.value = 'Password';}" required="">
 
                                     </div>
@@ -114,21 +114,22 @@
                                 </form>
                             </div>
                             <div class="login-right">
-                                <h3>Sign in with your account</h3>
-                                <form>
+                                <h3>Log in with your account</h3>
+                                <form action="{{ url('/login') }}" method="POST">
+                                    @csrf
                                     <div class="sign-in">
                                         <h4>Email :</h4>
-                                        <input type="text" value="Type here" onfocus="this.value = '';"
+                                        <input type="text" name="email" value="Type here" onfocus="this.value = '';"
                                             onblur="if (this.value == '') {this.value = 'Type here';}" required="">
                                     </div>
                                     <div class="sign-in">
                                         <h4>Password :</h4>
-                                        <input type="password" value="Password" onfocus="this.value = '';"
+                                        <input type="password" name="password" value="Password" onfocus="this.value = '';"
                                             onblur="if (this.value == '') {this.value = 'Password';}" required="">
                                         <a href="#">Forgot password?</a>
                                     </div>
                                     <div class="single-bottom">
-                                        <input type="checkbox" id="brand" value="">
+                                        <input type="checkbox" id="brand" value="" name="remember">
                                         <label for="brand"><span></span>Remember Me.</label>
                                     </div>
                                     <div class="sign-in">

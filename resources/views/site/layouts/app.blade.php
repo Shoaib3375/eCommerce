@@ -86,10 +86,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="col-md-3 header-right footer-bottom">
                 <ul>
-                    <li><a href="#" class="use1" data-toggle="modal"
-                            data-target="#myModal4"><span>Login</span></a>
+                    @auth
+                        <li>Welcome<p class="text-danger">{{ Auth::user()->name }}</p></li>
+                        <form action="{{ url('/logout')}}" method="POST">
+                        @csrf
+                        <input type="submit"  value="Logout">
+                        </form>
+                    @endauth
+                    @guest
 
+                    <li><a href="#" class="use1" data-toggle="modal"
+                            data-target="#myModal4"><span> Login </span></a>
                     </li>
+                    @endguest
                     <li><a class="fb" href="#"></a></li>
                     <li><a class="twi" href="#"></a></li>
                     <li><a class="insta" href="#"></a></li>
